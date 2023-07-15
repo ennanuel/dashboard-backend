@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "The backend of my fullstack dashboard web-app made using mainly node express and mongoose",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongoose"
+  ],
+  "author": "Emmanuel Ezema",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "mongoose": "^7.3.4",
+    "morgan": "^1.10.0",
+    "nodeman": "^1.1.2"
+  }
+}
