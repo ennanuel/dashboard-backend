@@ -1,3 +1,6 @@
 const router = (require('express')).Router()
+const { getSales } = require('../controllers/sales')
 
-export default router
+router.get('/', getSales);
+
+module.exports = router

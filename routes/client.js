@@ -1,3 +1,9 @@
-const router = (require('express')).Router()
+const router = (require('express')).Router();
+const { getProducts, getCustomers, getTransactions, getGeography } = require('../controllers/client');
 
-export default router
+router.get('/products', getProducts);
+router.get('/customers', getCustomers);
+router.get('/transactions', getTransactions);
+router.get('/geography', getGeography);
+
+module.exports = router;

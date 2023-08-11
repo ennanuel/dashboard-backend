@@ -8,10 +8,10 @@ const morgan = require('morgan');
 
 const app = express();
 
-const clientRoute = require('./routes/client')
-const generalRoute = require('./routes/general')
-const managementRoute = require('./routes/management')
-const salesRoute = require('./routes/sales')
+const clientRoute = require('./routes/client');
+const generalRoute = require('./routes/general');
+const managementRoute = require('./routes/management');
+const salesRoute = require('./routes/sales');
 
 // CONFIGURATION 
 dotenv.config()
@@ -29,3 +29,19 @@ app.use('/client', clientRoute)
 app.use('/general', generalRoute)
 app.use('/management', managementRoute)
 app.use('/sales', salesRoute)
+
+// MONGOOSE SETUP
+const PORT = process.env.PORT || 9000
+
+console.warn('Connecting to MongoDB...')
+
+mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    app.listen(PORT, () => {
+        console.log('app running on port', PORT);
+    })
+}).catch(error => {
+    console.error(error, 'Could not connect.')
+})

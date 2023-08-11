@@ -1,3 +1,8 @@
 const router = (require('express')).Router()
+const { getAdmins, getUserPerformance } = require('../controllers/management')
 
-export default router
+
+router.get('/admins', getAdmins);
+router.get('/performance/:id', getUserPerformance);
+
+module.exports = router
